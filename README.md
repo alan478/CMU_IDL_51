@@ -75,16 +75,6 @@ Move to the `Training Code/` directory to train the model. Use the preprocessed 
 
 ---
 
-## Results
-The project includes:
-- **Custom Transformer Model**
-  - Reconstruction Loss: ~6.2
-  - Adversarial Loss: ~1.39
-  - Cross-Alignment Loss: ~0.90
-- **Fine-Tuned T5 Model**
-  - Total Loss: ~0.98
-
----
 
 
 ## Acknowledgments
