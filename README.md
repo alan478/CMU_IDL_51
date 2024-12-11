@@ -1,7 +1,5 @@
 # CMU_IDL_51
 
-# CMU_IDL_51
-
 ## Overview
 This repository contains the implementation for a multi-attribute text style transfer project. The project focuses on leveraging transformer-based architectures to rewrite text across stylistic dimensions such as sentiment, tone, and formality while preserving semantic integrity. It includes two key components:
 
@@ -14,7 +12,8 @@ This repository contains the implementation for a multi-attribute text style tra
 - `Preprocessing/`
   - Scripts and instructions for preprocessing datasets (e.g., Yelp, Amazon) to prepare data for training models.
 - `Training Code/`
-  - Scripts and models for training and evaluating transformer-based models for style transfer.
+  - `CustomModel.py`: Script for training the custom transformer model.
+  - `T5_Finetuning.py`: Script for fine-tuning the T5 model.
 - `README.md`
   - The main readme file.
 
@@ -61,24 +60,18 @@ cat README.md  # Follow the instructions here
 ```
 
 ### **4. Model Training**
-Move to the `Training Code/` directory to train the model. Use the preprocessed dataset paths created in the preprocessing step. Training scripts for both the custom transformer model and fine-tuned T5 model are included.
+Move to the `Training Code/` directory to train the model. Use the preprocessed dataset paths created in the preprocessing step. The directory contains the following scripts:
 
-```bash
-cd Training Code
-python train_model.py --data_path <path_to_processed_data> --model_type <custom|t5> --epochs <number_of_epochs>
-```
+- **CustomModel.py**: Train the custom transformer model.
+  ```bash
+  python CustomModel.py 
+  ```
 
-**Key Arguments:**
-- `--data_path`: Path to the preprocessed dataset.
-- `--model_type`: Specify whether to use the custom transformer (`custom`) or the fine-tuned T5 model (`t5`).
-- `--epochs`: Number of training epochs.
+- **T5_Finetuning.py**: Fine-tune the T5 model.
+  ```bash
+  python T5_Finetuning.py 
+  ```
 
-### **5. Evaluation**
-After training, evaluate the models using the validation and test datasets. The evaluation script will calculate metrics such as BLEU scores, style accuracy, and semantic similarity.
-
-```bash
-python evaluate_model.py --model_path <path_to_trained_model> --data_path <path_to_test_data>
-```
 
 ---
 
@@ -93,18 +86,8 @@ The project includes:
 
 ---
 
-## Contribution
-- **Alankrit & Sumedh**: Literature review, model improvement research, and evaluation.
-- **Vagisha & Atharva**: Data preprocessing, baseline model implementation, and training.
-
----
 
 ## Acknowledgments
 This work is inspired by existing research in text style transfer, including models like T5 and custom transformers. Special thanks to the CMU-IDL course for guidance and resources.
-
----
-
-## License
-This project is licensed under the MIT License. See the LICENSE file for details.
 
 
